@@ -1,0 +1,52 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.9.RELEASE'
+	}
+	repositories {
+        mavenLocal()
+		maven { url "http://maven.aliyun.com/nexus/content/groups/public"}
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.yunjie'
+version = '1.0.0'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public"}
+	mavenCentral()
+}
+
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+//	compile('org.springframework.boot:spring-boot-starter-actuator')
+//	compile('org.springframework.boot:spring-boot-starter-aop')
+//	compile('org.springframework.boot:spring-boot-starter-batch')
+//	compile('org.springframework.boot:spring-boot-starter-cache')
+//	compile('org.springframework.boot:spring-boot-starter-data-elasticsearch')
+//	compile('org.springframework.boot:spring-boot-starter-data-redis')
+//	compile('org.springframework.boot:spring-boot-starter-mail')
+//	compile('org.springframework.boot:spring-boot-starter-security')
+//	compile('org.springframework.boot:spring-boot-starter-validation')
+	compile('com.google.guava:guava:23.0')
+	compile('org.apache.commons:commons-collections4:4.1')
+	compile('org.apache.commons:commons-lang3:3.7')
+
+	runtime('org.springframework.boot:spring-boot-devtools')
+//	runtime('mysql:mysql-connector-java')
+	compileOnly('org.projectlombok:lombok')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.batch:spring-batch-test')
+	testCompile('org.springframework.security:spring-security-test')
+}
