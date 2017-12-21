@@ -8,14 +8,25 @@ import java.math.BigDecimal;
  */
 public class TianFuHouse extends HouseComponent {
 
+    public TianFuHouse(HouseSize houseSize) {
+        this.houseSize = houseSize;
+    }
+
     @Override
     String getDescription() {
-        return "this is tian fu house";
+        return "this is tian fu " + houseSize.getDescription() + " house";
     }
 
     @Override
     BigDecimal worth() {
-        return new BigDecimal(1000000);
+        switch (houseSize) {
+            case LARGE:
+                return new BigDecimal(1200000);
+            case MEDIUM:
+                return new BigDecimal(1100000);
+            default:
+                return new BigDecimal(1000000);
+        }
     }
 
 }

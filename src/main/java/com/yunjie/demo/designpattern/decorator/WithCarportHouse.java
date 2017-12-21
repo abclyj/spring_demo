@@ -17,6 +17,11 @@ public class WithCarportHouse extends HouseDecorator {
     }
 
     @Override
+    public HouseSize getHouseSize() {
+        return houseComponent.getHouseSize();
+    }
+
+    @Override
     String getDescription() {
         return houseComponent.getDescription() + " with car port ";
     }

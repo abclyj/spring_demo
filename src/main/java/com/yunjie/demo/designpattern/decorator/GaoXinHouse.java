@@ -8,14 +8,25 @@ import java.math.BigDecimal;
  */
 public class GaoXinHouse extends HouseComponent {
 
+    public GaoXinHouse(HouseSize houseSize) {
+        this.houseSize = houseSize;
+    }
+
     @Override
     String getDescription() {
-        return "this is gao xin";
+        return "this is gao xin " + houseSize.getDescription() + " house!";
     }
 
     @Override
     BigDecimal worth() {
-        return new BigDecimal(1500000);
+        switch (houseSize) {
+            case LARGE:
+                return new BigDecimal(1700000);
+            case MEDIUM:
+                return new BigDecimal(1600000);
+            default:
+                return new BigDecimal(1500000);
+        }
     }
 
 }

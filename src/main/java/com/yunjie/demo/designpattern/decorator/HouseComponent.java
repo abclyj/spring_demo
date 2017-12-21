@@ -8,8 +8,18 @@ import java.math.BigDecimal;
  */
 public abstract class HouseComponent {
 
+    protected HouseSize houseSize;
+
     abstract String getDescription();
 
     abstract BigDecimal worth();
+
+    public HouseSize getHouseSize() {
+        return houseSize;
+    }
+
+    public void setHouseSize(HouseSize houseSize) {
+        this.houseSize = houseSize;
+    }
 
 }

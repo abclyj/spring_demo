@@ -17,6 +17,11 @@ public class HardCoverHouse extends HouseDecorator {
     }
 
     @Override
+    public HouseSize getHouseSize() {
+        return houseComponent.getHouseSize();
+    }
+
+    @Override
     String getDescription() {
         return houseComponent.getDescription() + " with hard cover! ";
     }
