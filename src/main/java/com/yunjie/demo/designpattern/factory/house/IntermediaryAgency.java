@@ -1,4 +1,4 @@
-package com.yunjie.demo.designpattern.factory;
+package com.yunjie.demo.designpattern.factory.house;
 
 /**
  * @author yunjie
